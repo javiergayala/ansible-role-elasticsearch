@@ -25,7 +25,7 @@
     ./bin/elasticsearch-plugin install {{ item }}
   args:
     chdir: "{{ elasticsearch_root }}"
-    creates: ""{{ elasticsearch_root }}/plugins/{{ item }}""
+    creates: "{{ elasticsearch_root }}/plugins/{{ item }}"
   with_items: "{{ elasticsearch_install_plugins }}"
   when: elasticsearch_install_plugins is defined
   notify: restart elasticsearch
