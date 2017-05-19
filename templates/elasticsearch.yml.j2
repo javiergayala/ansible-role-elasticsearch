@@ -94,4 +94,6 @@ http.port: {{ elasticsearch_http_port }}
 #
 # action.destructive_requires_name: true
 script.inline: {{ elasticsearch_script_inline }}
+{% if elasticsearch_version < 5 %}
 script.indexed: {{ elasticsearch_script_indexed }}
+{% endif %}
