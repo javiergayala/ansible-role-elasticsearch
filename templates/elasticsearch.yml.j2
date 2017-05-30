@@ -58,6 +58,13 @@ network.host: {{ elasticsearch_network_host }}
 #
 http.port: {{ elasticsearch_http_port }}
 #
+{% if elasticsearch_enable_cors is defined and elasticsearch_enable_cors == true %}
+http.cors.enabled: {{ elasticsearch_enable_cors | lower() }}
+{% if elasticsearch_cors_alloworigin is defined %}
+http.cors.allow-origin: "{{ elasticsearch_cors_alloworigin }}"
+{% endif %}
+{% endif %}
+#
 # For more information, see the documentation at:
 # <http://www.elastic.co/guide/en/elasticsearch/reference/current/modules-network.html>
 #

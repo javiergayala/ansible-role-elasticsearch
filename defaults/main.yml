@@ -5,6 +5,10 @@ elasticsearch_http_port: 9200
 elasticsearch_script_inline: true
 elasticsearch_script_indexed: true
 elasticsearch_root: /usr/share/elasticsearch
+# Whether to enable cors for the API
+elasticsearch_enable_cors: false
+# Domain origin(s) to allow with cors
+elasticsearch_cors_alloworigin: localhost
 
 elasticsearch_install_plugins:
   - ingest-user-agent
